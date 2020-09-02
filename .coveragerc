@@ -1,0 +1,6 @@
+[report]
+include =
+    src/nmg/*
+omit =
+    */test*
+    */upgrades/*
