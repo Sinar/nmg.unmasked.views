@@ -166,6 +166,56 @@
                                         <!-- end Child Of -->
 
 
+                                        <!-- Cousin Subject -->
+                                        <div class="row" tal:repeat="relationship view/relationships_subject">
+                                            <div class="col-sm-10" tal:condition="python: relationship.relationship_type == 'cousin'">
+                                                <a tal:attributes="href relationship/relationship_object/to_object/absolute_url" href="person.html">
+                                                    <h3 tal:content="relationship/relationship_object/to_object/title">JAMES RAYMOND NJENGA</h3>
+                                                    <p class="excerpt">Cousin of <span tal:replace="relationship/relationship_object/to_object/title" /></p>
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-2" tal:condition="python: relationship.relationship_type == 'cousin'">
+                                                <a tal:attributes="href relationship/relationship_object/to_object/absolute_url" href="person.html">
+                                                   
+                                                    <img
+                                                       tal:condition="relationship/relationship_object/to_object/image" 
+                                                        tal:attributes="src string:
+                                                        ${relationship/relationship_object/to_object/absolute_url}/@@images/image/thumb">
+
+                                                    <img
+                                                     tal:condition="not: relationship/relationship_object/to_object/image"
+                                                     tal:attributes="src
+                                                     string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/user-light.svg"
+                                                    src="img/user-light.svg" alt=""></a>
+                                            </div>
+                                        </div>
+                                        <!-- end Cousin -->
+
+                                        <!-- Cousin Object -->
+                                        <div class="row" tal:repeat="relationship view/relationships_object">
+                                            <div class="col-sm-10" tal:condition="python: relationship.relationship_type == 'cousin'">
+                                                <a tal:attributes="href relationship/relationship_subject/to_object/absolute_url" href="person.html">
+                                                    <h3 tal:content="relationship/relationship_subject/to_object/title">JAMES RAYMOND NJENGA</h3>
+                                                    <p class="excerpt">Cousin of <span tal:replace="relationship/relationship_subject/to_object/title" /></p>
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-2" tal:condition="python: relationship.relationship_type == 'cousin'">
+                                                <a tal:attributes="href relationship/relationship_object/to_object/absolute_url" href="person.html">
+                                                   
+                                                    <img
+                                                       tal:condition="relationship/relationship_subject/to_object/image" 
+                                                        tal:attributes="src string:
+                                                        ${relationship/relationship_subject/to_object/absolute_url}/@@images/image/thumb">
+
+                                                    <img
+                                                     tal:condition="not: relationship/relationship_subject/to_object/image"
+                                                     tal:attributes="src
+                                                     string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/user-light.svg"
+                                                    src="img/user-light.svg" alt=""></a>
+                                            </div>
+                                        </div>
+                                        <!-- end Cousin -->
+
 
                                      </div>
 
