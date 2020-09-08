@@ -7,6 +7,14 @@
   -*- extra stuff goes here -*-
 
   <browser:page
+    name="nmg-issue-view"
+    for="Products.CMFCore.interfaces.IFolderish"
+    class=".n_m_g_issue_view.NMGIssueView"
+    template="nmg_issue_view.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="nmg-organization-view"
     for="Products.CMFCore.interfaces.IFolderish"
     class=".n_m_g_organization_view.NMGOrganizationView"
