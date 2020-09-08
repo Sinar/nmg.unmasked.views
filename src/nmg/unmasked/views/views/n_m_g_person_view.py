@@ -118,7 +118,7 @@ class NMGPersonView(DefaultView):
 
         source_object = self.context
         attribute_names = ['implicated', 'directly_implicated',
-                           'circumstantially_implicated']
+                           'circumstantial_implicated']
 
         result = []
 
