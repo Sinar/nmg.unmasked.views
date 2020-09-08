@@ -100,7 +100,7 @@
                                                 <a tal:attributes="href relationship/relationship_object/to_object/absolute_url" href="person.html">
                                                    
                                                     <img
-                                                       tal:condition="relationship/relationship_subject/to_object/image" 
+                                                        tal:condition="relationship/relationship_subject/to_object/image" 
                                                         tal:attributes="src string:
                                                         ${relationship/relationship_subject/to_object/absolute_url}/@@images/image/thumb">
 
