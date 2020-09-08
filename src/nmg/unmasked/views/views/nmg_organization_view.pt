@@ -67,7 +67,7 @@
                                             <div class="container">
                                                 <div class="row">
                                                     <div class="col-sm-8">
-                                                        <a href="person.html">
+                                                        <a tal:attributes="href member/person/to_object/absolute_url" href="person.html">
                                                             <h3 tal:content="member/person/to_object/title">PETER MULYUNGI MWANGANGI</h3>
                                                             <p class="excerpt" tal:content="member/title">There are many variations of passages of Lorem Ipsum available</p>
                                                         </a>
