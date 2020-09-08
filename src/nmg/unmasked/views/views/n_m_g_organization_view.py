@@ -54,6 +54,33 @@ class NMGOrganizationView(BrowserView):
 
         return result
 
+    def employees(self):
+        # Get relationships where person is employee of organization
+
+        """
+        Return back references from source object on specified attribute_name
+        """
+        catalog = getUtility(ICatalog)
+        intids = getUtility(IIntIds)
+
+        source_object = self.context
+
+        result = []
+
+        for rel in catalog.findRelations(
+            dict(to_id=intids.getId(aq_inner(source_object)),
+                 from_attribute='relationship_subject')
+              ):
+
+            obj = intids.queryObject(rel.from_id)
+
+            if obj is not None and checkPermission('zope2.View', obj):
+                result.append(obj)
+
+        return result
+
+
+
     def stories(self):
         """
         Return back references from source object where
