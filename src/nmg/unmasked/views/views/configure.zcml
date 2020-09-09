@@ -7,6 +7,14 @@
   -*- extra stuff goes here -*-
 
   <browser:page
+    name="unmasked-front-page-view"
+    for="Products.CMFCore.interfaces.IFolderish"
+    class=".unmasked_front_page_view.UnmaskedFrontPageView"
+    template="unmasked_front_page_view.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="nmg-award-view"
     for="Products.CMFCore.interfaces.IFolderish"
     class=".n_m_g_award_view.NMGAwardView"
