@@ -8,6 +8,8 @@ from zc.relation.interfaces import ICatalog
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from zope.schema.interfaces import IVocabularyFactory
 
+from operator import methodcaller
+
 from nmg.unmasked.views import _
 from Products.Five.browser import BrowserView
 
@@ -44,3 +46,39 @@ class NMGProcurementView(BrowserView):
             directors.append(membership.person.to_object)
 
         return directors
+
+    def stories(self):
+        """
+        Return back references from stories
+
+        """
+        catalog = getUtility(ICatalog)
+        intids = getUtility(IIntIds)
+
+        source_object = self.context
+        attribute_names = ['related_releases']
+
+        result = []
+
+        for attribute_name in attribute_names:
+
+            for rel in catalog.findRelations(
+                dict(to_id=intids.getId(aq_inner(source_object)),
+                     from_attribute=attribute_name)
+                  ):
+
+                obj = intids.queryObject(rel.from_id)
+
+                if obj is not None and checkPermission('zope2.View', obj):
+                    if obj.portal_type == 'Issue Source':
+                        result.append(obj)
+
+        unique = list(dict.fromkeys(result))
+
+        sorted_effective = sorted(unique,
+                                  key=methodcaller('effective'),
+                                  reverse=True)
+        if sorted_effective:
+            return sorted_effective
+        else:
+            return None

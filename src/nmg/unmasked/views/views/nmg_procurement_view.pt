@@ -97,126 +97,25 @@
                                 </h5>
                             </div>
                             <div class="row grid Ml">
-                                <div class="col-sm-4">
+                                <div class="col-sm-4" tal:repeat="story view/stories">
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-sm-5">
-                                                <a href="story.html"><img src="content/002.jpg" alt=""></a>
+                                                <a tal:attributes="href story/absolute_url" href="story.html">
+                                                    <img tal:attributes="src string:${story/absolute_url}/@@images/image/thumb" src="content/002.jpg" alt=""></a>
                                             </div>
                                             <div class="col-sm-7 headline-wrapper">
-                                                <a href="story.html">
-                                                    <h5>September 02, 2020</h5>
+                                                <a tal:attributes="href story/absolute_url" href="story.html">
+                                                    <h5 tal:content="story/effective">September 02, 2020</h5>
                                                 </a>
                                                 <div class="byline">
-                                                    <span class="category">Procurement board orders for fresh ballot papers tender</span>
+                                                    <span class="category" tal:content="story/title">Procurement board orders for fresh ballot papers tender</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-4">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-sm-5">
-                                                <a href="story.html"><img src="content/003.jpg" alt=""></a>
-                                            </div>
-                                            <div class="col-sm-7 headline-wrapper">
-                                                <a href="story.html">
-                                                    <h5>October 28, 2020</h5>
-                                                </a>
-                                                <div class="byline">
-                                                    <span class="category">End to revenue stalemate in sight as team is formed to discuss deal</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-sm-5">
-                                                <a href="story.html"><img src="content/004.jpg" alt=""></a>
-                                            </div>
-                                            <div class="col-sm-7 headline-wrapper">
-                                                <a href="story.html">
-                                                    <h5>October 23, 2020</h5>
-                                                </a>
-                                                <div class="byline">
-                                                    <span class="category">Lawyer wants Uhuru by-passed in appointment of 41 judges</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="container">
-                                    <div class="row">
-                                        <div class="col-sm-5">
-                                            <a href="story.html"><img src="content/001.jpg" alt=""></a>
-                                        </div>
-                                        <div class="col-sm-7 headline-wrapper">
-                                            <a href="story.html">
-                                                <h5>October 12, 2020</h5>
-                                            </a>
-                                            <div class="byline">
-                                                <span class="category">State floats tender for solar powered street lights</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-sm-5">
-                                                <a href="story.html"><img src="content/002.jpg" alt=""></a>
-                                            </div>
-                                            <div class="col-sm-7 headline-wrapper">
-                                                <a href="story.html">
-                                                    <h5>October 10, 2020</h5>
-                                                </a>
-                                                <div class="byline">
-                                                    <span class="category">Procurement board orders for fresh ballot papers tender</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-sm-5">
-                                                <a href="story.html"><img src="content/003.jpg" alt=""></a>
-                                            </div>
-                                            <div class="col-sm-7 headline-wrapper">
-                                                <a href="story.html">
-                                                    <h5>October 08, 2020</h5>
-                                                </a>
-                                                <div class="byline">
-                                                    <span class="category">End to revenue stalemate in sight as team is formed to discuss deal</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-sm-5">
-                                                <a href="story.html"><img src="content/004.jpg" alt=""></a>
-                                            </div>
-                                            <div class="col-sm-7 headline-wrapper">
-                                                <a href="story.html">
-                                                    <h5>October 03, 2020</h5>
-                                                </a>
-                                                <div class="byline">
-                                                    <span class="category">Lawyer wants Uhuru by-passed in appointment of 41 judges</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                           </div>
                         </div>
                     </div>
                 </main>

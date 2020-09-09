@@ -184,92 +184,25 @@
                                 <h5 class="section-label">
                                     Contracts
                                 </h5>
-                                <a href="#" class="section-link">All Related Contracts</a>
+                                <a href="#" class="section-link">All Related Procurement</a>
                             </div>
                             <div class="container">
-                                <div class="row">
+                                <div class="row" tal:repeat="award view/awards">
                                     <div class="col-sm-10">
-                                        <a href="person.html">
-                                            <h3>Contract NO. EACC/07/2014-2015 FOR
+                                        <a tal:attributes="href award/absolute_url" href="person.html">
+                                            <h3 tal:content="award/title">Contract NO. EACC/07/2014-2015 FOR
                                                 SUPPLY AND DELIVERY OF VARIOUS ICT
                                                 ITEMS</h3>
-                                            <p class="excerpt">Contract security None
+                                            <p class="excerpt" tal:content="award/description">Contract security None
                                                 Cost of hard copy bid
                                                 document Kes 500</p>
                                         </a>
                                     </div>
                                     <div class="col-sm-2">
-                                        <a href="person.html"><img src="content/tender.jpg" alt=""></a>
+                                        <a tal:attributes="href award/absolute_url" href="person.html">
+                                        <img tal:attributes="src string:${award/absolute_url}/@@images/image/thumb" src="content/tender.jpg" alt=""></a>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-sm-10">
-                                        <a href="person.html">
-                                            <h3>Contract NO. EACC/06/2014-2015 FOR
-                                                SUPPLY AND DELIVERY OF MOBILE
-                                                REPORT OFFICE BUS AND FABRICATION
-                                                OF AN EXISTING LORRY</h3>
-                                            <p class="excerpt">Contract security 2% of bid
-                                                price
-                                                Cost of hard copy bid
-                                                document Kes 1000</p>
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-2">
-                                        <a href="person.html"><img src="content/tender.jpg" alt=""></a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-10">
-                                        <a href="person.html">
-                                            <h3>Contract NO. EACC/04/2014-2015 FOR
-                                                PROVISION OF OUTSIDE CATERING SERVICES FOR A PERIOD OF ONE YEAR</h3>
-                                            <p class="excerpt">Contract security Kes 200,000
-                                                Cost of hard copy bid
-                                                document Kes 1000</p>
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-2">
-                                        <a href="person.html"><img src="" alt=""></a>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <a href="#">
-                                            <h3>Lawyer wants Uhuru by-passed in appointment of 41 judges</h3>
-                                            <p class="excerpt">A widower and a divorcee share the struggles and triumphs of raising their children alone.</p>
-                                            <div class="byline">
-                                                <span class="category">Story</span>
-                                                <span class="date">4 hours ago</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <a href=""><img src="content/002.jpg" alt=""></a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <a href="#">
-                                            <h3>Lawyer wants Uhuru by-passed in appointment of 41 judges</h3>
-                                            <p class="excerpt">A widower and a divorcee share the struggles and triumphs of raising their children alone.</p>
-                                            <div class="byline">
-                                                <span class="category">Story</span>
-                                                <span class="date">5 hours ago</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <a href=""><img src="content/004.jpg" alt=""></a>
-                                    </div>
-                                </div>
-                            </div>
-                            
                         </div>
                             
                     </div>
