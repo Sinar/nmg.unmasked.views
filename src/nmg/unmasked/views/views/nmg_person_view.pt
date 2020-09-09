@@ -20,8 +20,6 @@
                                 <div class="col-sm-2"></div>
                                 <div class="col-sm-2">
                                     <div class="img-circle">
-                                        <img tal:condition="context/image"
-                                        >
                                         <img tal:condition="context/image" tal:attributes="src string: ${context/absolute_url}/@@images/image/thumb"
                                         class="img-thumbnail">
                                         <img
