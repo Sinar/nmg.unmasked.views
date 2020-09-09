@@ -111,3 +111,70 @@ class NMGOrganizationView(BrowserView):
         unique = list(dict.fromkeys(result))
 
         return unique
+
+    def procurements(self):
+        """
+        Return back references from source object where
+
+        """
+        catalog = getUtility(ICatalog)
+        intids = getUtility(IIntIds)
+
+        source_object = self.context
+        attribute_names = ['buyer',
+                           'procuringEntity',
+                           'administrativeEntity',
+                           'suppliers',
+                           'tenderers',
+                           'funders',
+                           'reviewBody',
+                           'interestedParties',
+                           ]
+
+        result = []
+
+        for attribute_name in attribute_names:
+
+            for rel in catalog.findRelations(
+                dict(to_id=intids.getId(aq_inner(source_object)),
+                     from_attribute=attribute_name)
+                  ):
+
+                obj = intids.queryObject(rel.from_id)
+
+                if obj is not None and checkPermission('zope2.View', obj):
+                    if obj.portal_type == 'OCDS Release':
+                        result.append(obj)
+
+        unique = list(dict.fromkeys(result))
+
+        return unique
+
+    def awards(self):
+        """
+        Return back references from source object where
+
+        """
+        catalog = getUtility(ICatalog)
+        intids = getUtility(IIntIds)
+
+        source_object = self.context
+        attribute_names = ['suppliers',]
+
+        result = []
+
+        for attribute_name in attribute_names:
+
+            for rel in catalog.findRelations(
+                dict(to_id=intids.getId(aq_inner(source_object)),
+                     from_attribute=attribute_name)
+                  ):
+
+                obj = intids.queryObject(rel.from_id)
+
+                if obj is not None and checkPermission('zope2.View', obj):
+                    result.append(obj)
+
+        unique = list(dict.fromkeys(result))
+
+        return unique
