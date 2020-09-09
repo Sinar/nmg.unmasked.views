@@ -52,49 +52,46 @@
         <div class="section ctrld-grid">
             <main class="row">
                 <div id="content-container" class="container">
-                        <div class="row">
-                            <div class="row Sr Sr-small">
-                                <div class="col-sm-12">
-                                    <div class="row-header">
-                                        <h5 class="section-label">
-                                            Memberships and Posts of Persons in this organization
-                                        </h5>
-                                    </div>
-                                    
-                                    <div class="row grid">
-                                       
-									<!-- Memberships and posts of people in this organization -->
-	
-                                        <div class="col-sm-4" tal:repeat="member view/members">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="col-sm-8">
-                                                        <a tal:attributes="href member/person/to_object/absolute_url" href="person.html">
-                                                            <h3 tal:content="member/person/to_object/title">PETER MULYUNGI MWANGANGI</h3>
-                                                            <p class="excerpt" tal:content="member/title">There are many variations of passages of Lorem Ipsum available</p>
-                                                        </a>
+                    <div class="row Sr Sr-small">
+                        <div class="col-sm-12">
+                            <div class="row-header">
+                                <h5 class="section-label">
+                                    Memberships and Posts of Persons in this organization
+                                </h5>
+                            </div>
+                            
+                            <div class="row grid">
+                                
+                            <!-- Memberships and posts of people in this organization -->
+
+                                <div class="col-sm-4" tal:repeat="member view/members">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <a tal:attributes="href member/person/to_object/absolute_url" href="person.html">
+                                                    <h3 tal:content="member/person/to_object/title">PETER MULYUNGI MWANGANGI</h3>
+                                                    <p class="excerpt" tal:content="member/title">There are many variations of passages of Lorem Ipsum available</p>
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <a href="person.html">
+                                                    <div class="img-circle">
+                                                        <img tal:attributes="src string: ${member/person/to_object/absolute_url}/@@images/image/thumb" src="content/oliverkamau.jpg" alt="">
+                                                        <img
+                                                            tal:condition="not: member/person/to_object/image"
+                                                            tal:attributes="src
+                                                            string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/user-light.svg"
+                                                            alt="">
                                                     </div>
-                                                    <div class="col-sm-4">
-                                                        <a href="person.html">
-                                                            <div class="img-circle">
-                                                                <img tal:attributes="src string: ${member/person/to_object/absolute_url}/@@images/image/thumb" src="content/oliverkamau.jpg" alt="">
-																<img
-																 tal:condition="not: member/person/to_object/image"
-																 tal:attributes="src
-																 string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/user-light.svg"
-																 alt="">
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                </div>
+                                                </a>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
             </main>
         </div>
         <div class="section list-persons">
