@@ -5,9 +5,226 @@
       i18n:domain="nmg.unmasked.views"
       metal:use-macro="context/main_template/macros/master">
 <body>
-  <metal:block fill-slot="content-core">
-      <h2 i18n:translate="">Sample View</h2>
-      <p tal:content="view/msg">this gets replaced</p>
-  </metal:block>
+
+<metal:main fill-slot="main">
+	<tal:main-macro metal:define-macro="main">
+
+        <div class="section profile">
+            <main id="main-container" class="row row-offcanvas row-offcanvas-right">
+                <div id="content-core" class="col-sm-12">
+                    <div class="summary">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-2">
+                                    <img src="" tal:condition="context/image"
+                                         tal:attributes="src string:${context/absolute_url}/@@images/image/thumb" />
+                                    <img src="image/process.svg"
+                                         tal:condition="not: context/image"
+                                         tal:attributes="src string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/process.svg" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <h1 tal:content="context/title" class="">Procurement for PPE Supplies</h1>
+                                    <p tal:content="context/description" class="excerpt">Procurement for PPE Supplies for Nairobi Hospital - 200 masks. Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
+                                    <div class="byline">
+                                        <span
+                                        tal:content="context/effective" class="date">Friday, 26 April, 2020</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <div class="section ctrld-grid">
+            <div class="container">
+                <main id="main-container" class="row row-offcanvas row-offcanvas-right">
+                    <div id="content-core" class="col-sm-12">
+                        <div class="container">
+                            <div class="row-header">
+                                <h5 class="section-label">
+                                    Contracts and Awards
+                                </h5>
+                            </div>
+                            <div class="row grid Ml">
+                                <div class="col-sm-4">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-12" tal:repeat="award view/awards">
+                                                <a tal:attributes="href award/absolute_url" href="contract.html">
+                                                    <h3 tal:content="award/title">Contract Award to Kilig for PPE Supplies</h3>
+                                                    <div class="byline">
+                                                        <span class="category"><small>AWARDED TO:</small>
+                                                            <span tal:repeat="supplier award/suppliers">
+                                                                <span tal:content="supplier/to_object/title">Kilig Ltd</span>
+                                                            </span>
+                                                        </span><br/>
+                                                        <span class="category"><small>AWARDED BY:</small>
+                                                            <span tal:content="context/procuringEntity/to_object/title | nothing">School Equipment Production Unit (SEPU)</span><br/>
+                                                            <span class="category"><small>CONTRACT VALUE:</small>KSH <span tal:content="award/award_amount">KSh.150m</span></span><br/>
+                                                        <span class="category"><small>DIRECTORS:</small> 
+                                                            <span tal:repeat="supplier award/suppliers">
+                                                                <span tal:repeat="director python:view.directors(supplier.to_object)">
+                                                                        <span tal:replace="director/title">James Kagiri, Dr. Lenny Mugo</span>,
+                                                                </span>
+                                                            </span>
+                                                        </span> 
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                         
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <div class="section ctrld-grid">
+            <div class="container">
+                <main id="main-container" class="row row-offcanvas row-offcanvas-right">
+                    <div id="content-core" class="col-sm-12">
+                        <div class="container">
+                            <div class="row-header">
+                                <h5 class="section-label">
+                                    Related Stories
+                                </h5>
+                            </div>
+                            <div class="row grid Ml">
+                                <div class="col-sm-4">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <a href="story.html"><img src="content/002.jpg" alt=""></a>
+                                            </div>
+                                            <div class="col-sm-7 headline-wrapper">
+                                                <a href="story.html">
+                                                    <h5>September 02, 2020</h5>
+                                                </a>
+                                                <div class="byline">
+                                                    <span class="category">Procurement board orders for fresh ballot papers tender</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <a href="story.html"><img src="content/003.jpg" alt=""></a>
+                                            </div>
+                                            <div class="col-sm-7 headline-wrapper">
+                                                <a href="story.html">
+                                                    <h5>October 28, 2020</h5>
+                                                </a>
+                                                <div class="byline">
+                                                    <span class="category">End to revenue stalemate in sight as team is formed to discuss deal</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <a href="story.html"><img src="content/004.jpg" alt=""></a>
+                                            </div>
+                                            <div class="col-sm-7 headline-wrapper">
+                                                <a href="story.html">
+                                                    <h5>October 23, 2020</h5>
+                                                </a>
+                                                <div class="byline">
+                                                    <span class="category">Lawyer wants Uhuru by-passed in appointment of 41 judges</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-5">
+                                            <a href="story.html"><img src="content/001.jpg" alt=""></a>
+                                        </div>
+                                        <div class="col-sm-7 headline-wrapper">
+                                            <a href="story.html">
+                                                <h5>October 12, 2020</h5>
+                                            </a>
+                                            <div class="byline">
+                                                <span class="category">State floats tender for solar powered street lights</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <a href="story.html"><img src="content/002.jpg" alt=""></a>
+                                            </div>
+                                            <div class="col-sm-7 headline-wrapper">
+                                                <a href="story.html">
+                                                    <h5>October 10, 2020</h5>
+                                                </a>
+                                                <div class="byline">
+                                                    <span class="category">Procurement board orders for fresh ballot papers tender</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <a href="story.html"><img src="content/003.jpg" alt=""></a>
+                                            </div>
+                                            <div class="col-sm-7 headline-wrapper">
+                                                <a href="story.html">
+                                                    <h5>October 08, 2020</h5>
+                                                </a>
+                                                <div class="byline">
+                                                    <span class="category">End to revenue stalemate in sight as team is formed to discuss deal</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <a href="story.html"><img src="content/004.jpg" alt=""></a>
+                                            </div>
+                                            <div class="col-sm-7 headline-wrapper">
+                                                <a href="story.html">
+                                                    <h5>October 03, 2020</h5>
+                                                </a>
+                                                <div class="byline">
+                                                    <span class="category">Lawyer wants Uhuru by-passed in appointment of 41 judges</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+
+    </tal:main-macro>
+</metal:main>
 </body>
 </html>
