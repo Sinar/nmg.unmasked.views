@@ -17,11 +17,13 @@
                             <div class="row">
                                 <div class="col-sm-2"></div>
                                 <div class="col-sm-2">
-                                    <img src="" tal:condition="context/image"
-                                         tal:attributes="src string:${context/absolute_url}/@@images/image/thumb" />
-                                    <img src="image/process.svg"
-                                         tal:condition="not: context/image"
-                                         tal:attributes="src string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/process.svg" />
+                                    <div class="img-wrap">
+                                        <img src="" tal:condition="context/image"
+                                            tal:attributes="src string:${context/absolute_url}/@@images/image/thumb" />
+                                        <img src="image/process.svg"
+                                            tal:condition="not: context/image"
+                                            tal:attributes="src string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/process.svg" />
+                                    </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <h1 tal:content="context/title" class="">Procurement for PPE Supplies</h1>
