@@ -55,22 +55,24 @@
 
         <div class="section list-persons">
             <div class="container">
-                <main class="row row-offcanvas row-offcanvas-right">
-                    <div class="col-sm-12">
-                        <div class="row-header">
-                            <h5 class="section-label">
-                                Connected People and Organizations
-                            </h5>
-                        </div>
-                        <div class="row grid persons">
-                            <div class="col-sm-2" tal:repeat="person view/connected_persons">
-                                <a tal:attributes="href person/to_object/absolute_url" href="person.html">
-                                    <div class="img-circle"><img tal:condition="person/to_object/image" tal:attributes="src string: ${person/to_object/absolute_url}/@@images/image/thumb" src="content/oliverkamau.jpg" alt=""></div>
-                                    <h5 tal:content="person/to_object/title">Oliver Kamau</h5>
-                                    <div class="byline">
-                                        <span class="category" tal:content="person/to_object/description">Sales Manager at Organization XYZ</span>
-                                    </div>
-                                </a>
+                <main id="main-container" class="row row-offcanvas row-offcanvas-right">
+                    <div id="content-core" class="col-sm-12">
+                        <div class="container">
+                            <div class="row-header">
+                                <h5 class="section-label">
+                                    Connected People and Organizations
+                                </h5>
+                            </div>
+                            <div class="row grid persons">
+                                <div class="col-sm-2" tal:repeat="person view/connected_persons">
+                                    <a tal:attributes="href person/to_object/absolute_url" href="person.html">
+                                        <div class="img-circle"><img tal:condition="person/to_object/image" tal:attributes="src string: ${person/to_object/absolute_url}/@@images/image/thumb" src="content/oliverkamau.jpg" alt=""></div>
+                                        <h5 tal:content="person/to_object/title">Oliver Kamau</h5>
+                                        <div class="byline">
+                                            <span class="category" tal:content="person/to_object/description">Sales Manager at Organization XYZ</span>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
