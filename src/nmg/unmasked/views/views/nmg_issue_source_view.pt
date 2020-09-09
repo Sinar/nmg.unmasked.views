@@ -16,7 +16,8 @@
                         <div class="row">
                             <div class="col-sm-3"></div>
                             <div class="col-sm-6 headline">
-                            <h5 class="section-label"><a tal:attributes="href context/issue/to_object/absolute_url" href="issue.html">Covid-19 Millionnaires</a></h5>
+                            <h5 class="section-label"><a tal:on-error="nothing" tal:attributes="href
+                                    context/issue/to_object/absolute_url" href="issue.html">Covid-19 Millionnaires</a></h5>
                                 <h1 class="title-normal" tal:content="context/title">Covid-19: Head teachers say released cash too little for reopening plans</h1>
                                 <div class="byline">
                                     <span class="date"
@@ -41,7 +42,7 @@
                                 <p class="excerpt" tal:content="context/description">Head teachers who spoke to the Nation lamented that the funds released to the learning institutions for infrastructure cannot prepare them for reopening. </p>   
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <a tal:attributes="href context/issue/to_object/absolute_url" href="" class="section-back-link">Back to Issue</a>
+                                        <a tal:on-error="nothing" tal:attributes="href context/issue/to_object/absolute_url" href="" class="section-back-link">Back to Issue</a>
                                     </div>
                                     <div class="col-sm-6 align-right">
                                         <a tal:attributes="href context/url" href="https://nation.africa/kenya/news/education/covid-19-head-teachers-say-released-cash-too-little-for-reopening-plans-1927926" target="_blank" class="section-link">Read Full Story</a>
@@ -97,7 +98,7 @@
                                 </h5>
                             </div>
                             <div class="row grid Ml">
-                                <div class="col-sm-4" tal:repeat="story view/stories">
+                                <div class="col-sm-4" tal:repeat="story view/stories" tal:on-error="nothing">
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-sm-5">
