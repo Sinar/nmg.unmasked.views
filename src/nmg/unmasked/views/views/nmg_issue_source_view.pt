@@ -19,7 +19,9 @@
                             <h5 class="section-label"><a tal:attributes="href context/issue/to_object/absolute_url" href="issue.html">Covid-19 Millionnaires</a></h5>
                                 <h1 class="title-normal" tal:content="context/title">Covid-19: Head teachers say released cash too little for reopening plans</h1>
                                 <div class="byline">
-                                    <span class="date" tal:content="context/effective">Friday, 03 September, 2020</span>
+                                    <span class="date"
+                                        tal:content="python:
+                                        context.toLocalizedTime(context.effective())">Friday, 03 September, 2020</span>
                                 </div>
                             </div>
                             <div class="col-sm-3"></div>
@@ -96,7 +98,9 @@
                                             </div>
                                             <div class="col-sm-7 headline-wrapper">
                                                 <a href="story.html">
-                                                    <h5 tal:content="story/effective">September 02, 2020</h5>
+                                                    <h5
+                                                        tal:content="python:
+                                                        context.toLocalizedTime(story.effective())">September 02, 2020</h5>
                                                 </a>
                                                 <div class="byline">
                                                     <span class="category" tal:content="story/title">Procurement board orders for fresh ballot papers tender</span>

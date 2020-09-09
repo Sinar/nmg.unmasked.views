@@ -30,7 +30,10 @@
                                     </p>
                                     <div class="byline">
                                         <!-- last modified date -->
-                                        <span class="date"><small>LAST UPDATED:</small><span tal:content="context/modified">Thursday, September 03, 2020</span></span>
+                                        <span class="date"><small>LAST
+                                                UPDATED:</small><span
+                                                tal:content="python:
+                                                context.toLocalizedTime(context.modified())">Thursday, September 03, 2020</span></span>
                                     </div>
                                 </div>
                                 <div class="col-sm-3"></div>
@@ -62,7 +65,9 @@
                                             </div>
                                             <div class="col-sm-7 headline-wrapper">
                                                 <a tal:attributes="href story/absolute_url" href="story.html">
-                                                    <h5 tal:content="story/effective">September 02, 2020</h5>
+                                                    <h5
+                                                        tal:content="python:
+                                                        context.toLocalizedTime(story.effective())">September 02, 2020</h5>
                                                 </a>
                                                 <div class="byline">
                                                     <span class="category" tal:content="story/title">Procurement board orders for fresh ballot papers tender</span>

@@ -23,7 +23,7 @@
                                             <div class="byline">
                                                 <span class="category">Story</span>
                                                 <span class="date"
-                                                      tal:content="python: view.first_story().effective">
+                                                      tal:content="python: context.toLocalizedTime(view.first_story().effective)">
                                                     1 hour ago</span>
                                             </div>
                                         </a>        
@@ -41,7 +41,9 @@
                                         <h5 tal:content="teaser/Title">Procurement board orders for fresh ballot papers tender</h5>
                                         <div class="byline">
                                             <span class="category">Story</span>
-                                            <span class="date" tal:content="teaser/effective">2 hours ago</span>
+                                            <span class="date"
+                                                tal:content="python:
+                                                context.toLocalizedTime(teaser.effective)">2 hours ago</span>
                                         </div>
                                     </a>
                                 </div>
@@ -73,7 +75,8 @@
                                         </p>
                                         <div class="byline">
                                             <span class="category">Issue</span>
-                                            <span tal:content="issue/effective" class="date">1 hour ago</span>
+                                            <span tal:content="python:
+                                                context.toLocalizedTime(issue.effective)" class="date">1 hour ago</span>
                                         </div>
                                     </div>
                                 </a>
