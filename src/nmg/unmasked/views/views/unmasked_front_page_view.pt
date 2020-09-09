@@ -37,7 +37,7 @@
                         <div class="col-sm-4">
                             <div class="side-teaser container">
                                 <div class="row" tal:repeat="teaser python:view.stories()[1:5]">
-                                    <a href="#">
+                                    <a href="#" tal:attributes="href teaser/getURL">
                                         <h5 tal:content="teaser/Title">Procurement board orders for fresh ballot papers tender</h5>
                                         <div class="byline">
                                             <span class="category">Story</span>
@@ -67,7 +67,8 @@
                         <div class="row LLL">
                             <div class="col-sm-4" tal:repeat="issue view/issues">
                                 <a href="" tal:attributes="href issue/getURL">
-                                    <img tal:attributes="src string:${issue/getURL}/@@images/image/mini" src="content/003.jpg" alt="">
+                                    <img tal:attributes="src
+                                    string:${issue/getURL}/@@images/image/preview" src="content/003.jpg" alt="">
                                     <div class="headline-wrapper">
                                         <h3 tal:content="issue/Title">Mr Survivor: A dangerous handshake</h3>
                                         <p class="excerpt" tal:content="issue/Description">
