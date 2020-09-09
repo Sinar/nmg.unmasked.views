@@ -18,12 +18,14 @@
                             <div class="row">
                                 <div class="col-sm-2"></div>
                                 <div class="col-sm-2">
-                                    <img tal:attributes="src string: ${context/absolute_url}/@@images/image/thumb" src="content/oliverkamau.jpg" alt="">
-									<img
-									 tal:condition="not: context/image"
-									 tal:attributes="src
-									 string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/org.svg"
-									/>
+                                    <div class="img-wrap">
+                                        <img tal:attributes="src string: ${context/absolute_url}/@@images/image/thumb" src="content/oliverkamau.jpg" alt="">
+                                        <img
+                                        tal:condition="not: context/image"
+                                        tal:attributes="src
+                                        string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/org.svg"
+                                        />
+                                    </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <h2 tal:content="context/title">SUNDALES INTERNATIONAL LIMITED</h2>
@@ -145,133 +147,131 @@
         <div class="section">
             <main class="row row-offcanvas row-offcanvas-right">
                 <div class="container">
-                    <div class="row">
-                        <div class="row Sr Sr-small">
-                            <div class="col-sm-5">
-                                <div class="row-header">
-                                    <h5 class="section-label">
-                                        Related Stories
-                                    </h5>
-                                    <a href="#" class="section-link">All Related Stories</a>
-                                </div>
-
-                                    <div class="row" tal:repeat="story view/stories">
-                                        <div class="col-sm-8">
-                                            <a tal:attributes="href story/absolute_url"
-                                                href="#">
-                                                <h3 tal:content="story/title">Lawyer wants Uhuru by-passed in appointment of 41 judges</h3>
-                                                <p tal:content="story/description" class="excerpt">A widower and a divorcee share the struggles and triumphs of raising their children alone.</p>
-                                                <div class="byline">
-                                                    <span class="category">Story</span>
-                                                    <span tal:content="python:context.toLocalizedTime(story.effective_date)" class="date">4 hours ago</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <a tal:attributes="href story/absolute_url" href="">
-                                            <img tal:condition="story/image | nothing" 
-                                                tal:attributes="src string:${story/absolute_url}/@@images/image/thumb"
-                                             src="content/002.jpg" alt=""></a>
-                                        </div>
-                                    </div>
- 
-
-                           </div>
-                            <div class="col-sm-1"></div>
-                            <div class="col-sm-5">
-                                <div class="row-header">
-                                    <h5 class="section-label">
-                                        Contracts
-                                    </h5>
-                                    <a href="#" class="section-link">All Related Contracts</a>
-                                </div>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-sm-10">
-                                            <a href="person.html">
-                                                <h3>Contract NO. EACC/07/2014-2015 FOR
-                                                    SUPPLY AND DELIVERY OF VARIOUS ICT
-                                                    ITEMS</h3>
-                                                <p class="excerpt">Contract security None
-                                                    Cost of hard copy bid
-                                                    document Kes 500</p>
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-2">
-                                            <a href="person.html"><img src="content/tender.jpg" alt=""></a>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-10">
-                                            <a href="person.html">
-                                                <h3>Contract NO. EACC/06/2014-2015 FOR
-                                                    SUPPLY AND DELIVERY OF MOBILE
-                                                    REPORT OFFICE BUS AND FABRICATION
-                                                    OF AN EXISTING LORRY</h3>
-                                                <p class="excerpt">Contract security 2% of bid
-                                                    price
-                                                    Cost of hard copy bid
-                                                    document Kes 1000</p>
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-2">
-                                            <a href="person.html"><img src="content/tender.jpg" alt=""></a>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-10">
-                                            <a href="person.html">
-                                                <h3>Contract NO. EACC/04/2014-2015 FOR
-                                                    PROVISION OF OUTSIDE CATERING SERVICES FOR A PERIOD OF ONE YEAR</h3>
-                                                <p class="excerpt">Contract security Kes 200,000
-                                                    Cost of hard copy bid
-                                                    document Kes 1000</p>
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-2">
-                                            <a href="person.html"><img src="" alt=""></a>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-sm-8">
-                                            <a href="#">
-                                                <h3>Lawyer wants Uhuru by-passed in appointment of 41 judges</h3>
-                                                <p class="excerpt">A widower and a divorcee share the struggles and triumphs of raising their children alone.</p>
-                                                <div class="byline">
-                                                    <span class="category">Story</span>
-                                                    <span class="date">4 hours ago</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <a href=""><img src="content/002.jpg" alt=""></a>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-8">
-                                            <a href="#">
-                                                <h3>Lawyer wants Uhuru by-passed in appointment of 41 judges</h3>
-                                                <p class="excerpt">A widower and a divorcee share the struggles and triumphs of raising their children alone.</p>
-                                                <div class="byline">
-                                                    <span class="category">Story</span>
-                                                    <span class="date">5 hours ago</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <a href=""><img src="content/004.jpg" alt=""></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                
+                    <div class="row Sr Sr-small">
+                        <div class="col-sm-5">
+                            <div class="row-header">
+                                <h5 class="section-label">
+                                    Related Stories
+                                </h5>
+                                <a href="#" class="section-link">All Related Stories</a>
                             </div>
-                               
+
+                                <div class="row" tal:repeat="story view/stories">
+                                    <div class="col-sm-8">
+                                        <a tal:attributes="href story/absolute_url"
+                                            href="#">
+                                            <h3 tal:content="story/title">Lawyer wants Uhuru by-passed in appointment of 41 judges</h3>
+                                            <p tal:content="story/description" class="excerpt">A widower and a divorcee share the struggles and triumphs of raising their children alone.</p>
+                                            <div class="byline">
+                                                <span class="category">Story</span>
+                                                <span tal:content="python:context.toLocalizedTime(story.effective_date)" class="date">4 hours ago</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <a tal:attributes="href story/absolute_url" href="">
+                                        <img tal:condition="story/image | nothing" 
+                                            tal:attributes="src string:${story/absolute_url}/@@images/image/thumb"
+                                            src="content/002.jpg" alt=""></a>
+                                    </div>
+                                </div>
+
+
                         </div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-5">
+                            <div class="row-header">
+                                <h5 class="section-label">
+                                    Contracts
+                                </h5>
+                                <a href="#" class="section-link">All Related Contracts</a>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-10">
+                                        <a href="person.html">
+                                            <h3>Contract NO. EACC/07/2014-2015 FOR
+                                                SUPPLY AND DELIVERY OF VARIOUS ICT
+                                                ITEMS</h3>
+                                            <p class="excerpt">Contract security None
+                                                Cost of hard copy bid
+                                                document Kes 500</p>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <a href="person.html"><img src="content/tender.jpg" alt=""></a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-10">
+                                        <a href="person.html">
+                                            <h3>Contract NO. EACC/06/2014-2015 FOR
+                                                SUPPLY AND DELIVERY OF MOBILE
+                                                REPORT OFFICE BUS AND FABRICATION
+                                                OF AN EXISTING LORRY</h3>
+                                            <p class="excerpt">Contract security 2% of bid
+                                                price
+                                                Cost of hard copy bid
+                                                document Kes 1000</p>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <a href="person.html"><img src="content/tender.jpg" alt=""></a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-10">
+                                        <a href="person.html">
+                                            <h3>Contract NO. EACC/04/2014-2015 FOR
+                                                PROVISION OF OUTSIDE CATERING SERVICES FOR A PERIOD OF ONE YEAR</h3>
+                                            <p class="excerpt">Contract security Kes 200,000
+                                                Cost of hard copy bid
+                                                document Kes 1000</p>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <a href="person.html"><img src="" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <a href="#">
+                                            <h3>Lawyer wants Uhuru by-passed in appointment of 41 judges</h3>
+                                            <p class="excerpt">A widower and a divorcee share the struggles and triumphs of raising their children alone.</p>
+                                            <div class="byline">
+                                                <span class="category">Story</span>
+                                                <span class="date">4 hours ago</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <a href=""><img src="content/002.jpg" alt=""></a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <a href="#">
+                                            <h3>Lawyer wants Uhuru by-passed in appointment of 41 judges</h3>
+                                            <p class="excerpt">A widower and a divorcee share the struggles and triumphs of raising their children alone.</p>
+                                            <div class="byline">
+                                                <span class="category">Story</span>
+                                                <span class="date">5 hours ago</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <a href=""><img src="content/004.jpg" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                            
                     </div>
                 </div>
             </main>

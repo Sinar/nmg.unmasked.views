@@ -15,7 +15,8 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm-3"></div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-6 headline">
+                                <h5 class="section-label"><a href="issue.html">Covid-19 Millionnaires</a></h5>
                                     <h1 class="title-normal" tal:content="context/title">Covid-19: Head teachers say released cash too little for reopening plans</h1>
                                     <div class="byline">
                                         <span class="date" tal:content="context/effective">Friday, 03 September, 2020</span>
@@ -36,7 +37,14 @@
                                 <div class="col-sm-3"></div>
                                 <div class="col-sm-6">
                                     <p class="excerpt" tal:content="context/description">Head teachers who spoke to the Nation lamented that the funds released to the learning institutions for infrastructure cannot prepare them for reopening. </p>   
-                                    <a tal:attributes="href context/url" href="https://nation.africa/kenya/news/education/covid-19-head-teachers-say-released-cash-too-little-for-reopening-plans-1927926" target="_blank" class="section-link">Read Full Story</a>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <a tal:attributes="href back_to_issue" href="" class="section-link">Back to Issue</a>
+                                        </div>
+                                        <div class="col-sm-6 align-right">
+                                            <a tal:attributes="href context/url" href="https://nation.africa/kenya/news/education/covid-19-head-teachers-say-released-cash-too-little-for-reopening-plans-1927926" target="_blank" class="section-link">Read Full Story</a>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-sm-3"></div>
                             </div>
