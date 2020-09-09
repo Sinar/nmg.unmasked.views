@@ -67,7 +67,7 @@
                         <div class="row LLL">
                             <div class="col-sm-4" tal:repeat="issue view/issues">
                                 <a href="" tal:attributes="href issue/getURL">
-                                    <img tal:attributes="src string:${issue/getURL}/@@images/image/thumb" src="content/003.jpg" alt="">
+                                    <img tal:attributes="src string:${issue/getURL}/@@images/image/mini" src="content/003.jpg" alt="">
                                     <div class="headline-wrapper">
                                         <h3 tal:content="issue/Title">Mr Survivor: A dangerous handshake</h3>
                                         <p class="excerpt" tal:content="issue/Description">
