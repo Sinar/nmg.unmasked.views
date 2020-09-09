@@ -5,9 +5,87 @@
       i18n:domain="nmg.unmasked.views"
       metal:use-macro="context/main_template/macros/master">
 <body>
-  <metal:block fill-slot="content-core">
-      <h2 i18n:translate="">Sample View</h2>
-      <p tal:content="view/msg">this gets replaced</p>
-  </metal:block>
+
+<metal:main fill-slot="main">
+	<tal:main-macro metal:define-macro="main">
+
+        <div class="container">
+            <main id="main-container" class="row row-offcanvas row-offcanvas-right">
+                <div id="content-container" class="container">
+                    <div class="row top-headlines LrS">
+                        <div class="col-sm-8 headline-wrapper">
+                            <div class="row top-headlines"
+                                 tal:define="story python:view.stories">
+                                <div class="col-sm-4 headline">
+                                        <a tal:attributes="href python: view.first_story().getURL()" href="" class="">
+                                            <h3 class="title-large" tal:content="python: view.first_story().Title">Single fathers: The pain and joy</h3>
+                                            <p class="excerpt" tal:content="python:view.first_story().Description">A widower and a divorcee share the struggles and triumphs of raising their children alone.</p>
+                                            <div class="byline">
+                                                <span class="category">Story</span>
+                                                <span class="date"
+                                                      tal:content="python: view.first_story().effective">
+                                                    1 hour ago</span>
+                                            </div>
+                                        </a>        
+                                    </div>
+                                    <div class="col-sm-8 headline"
+                                        tal:define="imagepath python:view.first_story().getURL()">
+                                        <a href=""><img tal:attributes="src string:${imagepath}/@@images/image/large" src="content/005.jpg" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="col-sm-4">
+                            <div class="side-teaser container">
+                                <div class="row" tal:repeat="teaser python:view.stories()[1:5]">
+                                    <a href="#">
+                                        <h5 tal:content="teaser/Title">Procurement board orders for fresh ballot papers tender</h5>
+                                        <div class="byline">
+                                            <span class="category">Story</span>
+                                            <span class="date" tal:content="teaser/effective">2 hours ago</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <div class="section">
+            <div class="container">
+                <main id="secondary-container" class="row row-offcanvas row-offcanvas-right">
+                    <div id="secondary-content-container" class="container">
+                        <div class="row-header">
+                            <h5 class="section-label">
+                                <a tal:attributes="href string:${context/portal_url}/issues" href="issues.html">Issues</a>
+                            </h5>
+                            <a tal:attributes="href string:${context/portal_url}/issues"  href="issues.html" class="section-link">All Issues</a>
+                        </div>
+                        <div class="row LLL">
+                            <div class="col-sm-4" tal:repeat="issue view/issues">
+                                <a href="" tal:attributes="href issue/getURL">
+                                    <img tal:attributes="src string:${issue/getURL}/@@images/image/thumb" src="content/003.jpg" alt="">
+                                    <div class="headline-wrapper">
+                                        <h3 tal:content="issue/Title">Mr Survivor: A dangerous handshake</h3>
+                                        <p class="excerpt" tal:content="issue/Description">
+                                            There are women in the countryside, but then there is Queen, my wife and mother of our three boys. 
+                                        </p>
+                                        <div class="byline">
+                                            <span class="category">Issue</span>
+                                            <span tal:content="issue/effective" class="date">1 hour ago</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                       </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+ 
+
+    </tal:main-macro>
+</metal:main>
 </body>
 </html>
