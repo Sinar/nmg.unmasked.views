@@ -47,7 +47,7 @@ class NMGPersonView(DefaultView):
 
         return result
 
-    def relationships_subject(self):
+    def relationships_subject(self,value):
         # Get relationships where person or organization is the subject
 
         """
@@ -68,11 +68,12 @@ class NMGPersonView(DefaultView):
             obj = intids.queryObject(rel.from_id)
 
             if obj is not None and checkPermission('zope2.View', obj):
-                result.append(obj)
+                if obj.relationship_type == value:
+                    result.append(obj)
 
         return result
 
-    def relationships_object(self):
+    def relationships_object(self, value):
         # Get relationships where person or organization is the object
 
         """
@@ -93,7 +94,8 @@ class NMGPersonView(DefaultView):
             obj = intids.queryObject(rel.from_id)
 
             if obj is not None and checkPermission('zope2.View', obj):
-                result.append(obj)
+                if obj.relationship_type == value:
+                    result.append(obj)
 
         return result
 
