@@ -5,9 +5,291 @@
       i18n:domain="nmg.unmasked.views"
       metal:use-macro="context/main_template/macros/master">
 <body>
-  <metal:block fill-slot="content-core">
-      <h2 i18n:translate="">Sample View</h2>
-      <p tal:content="view/msg">this gets replaced</p>
-  </metal:block>
+<metal:main fill-slot="main">
+	<tal:main-macro metal:define-macro="main">
+        <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+        <div class="section">
+            <main id="main-container" class="row row-offcanvas row-offcanvas-right">
+                <div id="content-core" class="col-sm-12">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-6">
+                                    <h1 class="title-normal" tal:content="context/title">Covid-19: Head teachers say released cash too little for reopening plans</h1>
+                                    <div class="byline">
+                                        <span class="date" tal:content="context/effective">Friday, 03 September, 2020</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-8">
+                                    <div class="lead-image">
+						                <img tal:condition="context/image" tal:attributes="src string: ${context/absolute_url}/@@images/image" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-2"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-6">
+                                    <p class="excerpt" tal:content="context/description">Head teachers who spoke to the Nation lamented that the funds released to the learning institutions for infrastructure cannot prepare them for reopening. </p>   
+                                    <a tal:attributes="href context/url" href="https://nation.africa/kenya/news/education/covid-19-head-teachers-say-released-cash-too-little-for-reopening-plans-1927926" target="_blank" class="section-link">Read Full Story</a>
+                                </div>
+                                <div class="col-sm-3"></div>
+                            </div>
+                        </div>
+                    
+                </div>
+            </main>
+        </div>
+        <div class="section list-persons">
+            <main class="row row-offcanvas row-offcanvas-right">
+                <!-- <div class="col-sm-2"></div> -->
+                <div class="col-sm-12">
+                    <div class="container">
+                        <div class="row-header">
+                            <h5 class="section-label">
+                                Connected Persons
+                            </h5>
+                        </div>
+                        <div class="row grid persons">
+                            <div class="col-sm-2">
+                                <a href="person.html">
+                                    <div class="img-circle"><img src="content/oliverkamau.jpg" alt=""></div>
+                                    <h5>Oliver Kamau</h5>
+                                    <div class="byline">
+                                        <span class="category">Sales Manager at Organization XYZ</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="person.html">
+                                    <div class="img-circle"><img src="content/phyliswaweru.jpeg" alt=""></div>
+                                    <h5>Phylis Waweru</h5>
+                                    <div class="byline">
+                                        <span class="category">HR Manager at Another Organization XYZ</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="person.html">
+                                    <div class="img-circle"><img src="content/oliverkamau.jpg" alt=""></div>
+                                    <h5>Bramwel Otieno</h5>
+                                    <div class="byline">
+                                        <span class="category">IT Manager at Organization XYZ</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="person.html">
+                                    <div class="img-circle"><img src="content/phyliswaweru.jpeg" alt=""></div>
+                                    <h5>Cynthia Vital</h5>
+                                    <div class="byline">
+                                        <span class="category">Marketing Executive at Sukaritamu Sugar Company Ltd.</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="person.html">
+                                    <div class="img-circle"><img src="content/oliverkamau.jpg" alt=""></div>
+                                    <h5>Oliver Kamau</h5>
+                                    <div class="byline">
+                                        <span class="category">Sales Manager at Organization XYZ</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="person.html">
+                                    <div class="img-circle"><img src="content/phyliswaweru.jpeg" alt=""></div>
+                                    <h5>Phylis Waweru</h5>
+                                    <div class="byline">
+                                        <span class="category">HR Manager at Another Organization XYZ</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="person.html">
+                                    <div class="img-circle"><img src="content/oliverkamau.jpg" alt=""></div>
+                                    <h5>Bramwel Otieno</h5>
+                                    <div class="byline">
+                                        <span class="category">IT Manager at Organization XYZ</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="person.html">
+                                    <div class="img-circle"><img src="content/phyliswaweru.jpeg" alt=""></div>
+                                    <h5>Cynthia Vital</h5>
+                                    <div class="byline">
+                                        <span class="category">Marketing Executive at Sukaritamu Sugar Company Ltd.</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="person.html">
+                                    <div class="img-circle"><img src="content/oliverkamau.jpg" alt=""></div>
+                                    <h5>Oliver Kamau</h5>
+                                    <div class="byline">
+                                        <span class="category">Sales Manager at Organization XYZ</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="person.html">
+                                    <div class="img-circle"><img src="content/phyliswaweru.jpeg" alt=""></div>
+                                    <h5>Phylis Waweru</h5>
+                                    <div class="byline">
+                                        <span class="category">HR Manager at Another Organization XYZ</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-sm-2"></div> -->
+            </main>
+        </div>
+        <div class="section ctrld-grid">
+            <div class="container">
+                <main id="main-container" class="row row-offcanvas row-offcanvas-right">
+                    <div id="content-core" class="col-sm-12">
+                        <div class="container">
+                            <div class="row-header">
+                                <h5 class="section-label">
+                                    Related Stories
+                                </h5>
+                            </div>
+                            <div class="row grid Ml">
+                                <div class="col-sm-4">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <a href="story.html"><img src="content/002.jpg" alt=""></a>
+                                            </div>
+                                            <div class="col-sm-7 headline-wrapper">
+                                                <a href="story.html">
+                                                    <h5>September 02, 2020</h5>
+                                                </a>
+                                                <div class="byline">
+                                                    <span class="category">Procurement board orders for fresh ballot papers tender</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <a href="story.html"><img src="content/003.jpg" alt=""></a>
+                                            </div>
+                                            <div class="col-sm-7 headline-wrapper">
+                                                <a href="story.html">
+                                                    <h5>October 28, 2020</h5>
+                                                </a>
+                                                <div class="byline">
+                                                    <span class="category">End to revenue stalemate in sight as team is formed to discuss deal</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <a href="story.html"><img src="content/004.jpg" alt=""></a>
+                                            </div>
+                                            <div class="col-sm-7 headline-wrapper">
+                                                <a href="story.html">
+                                                    <h5>October 23, 2020</h5>
+                                                </a>
+                                                <div class="byline">
+                                                    <span class="category">Lawyer wants Uhuru by-passed in appointment of 41 judges</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-5">
+                                            <a href="story.html"><img src="content/001.jpg" alt=""></a>
+                                        </div>
+                                        <div class="col-sm-7 headline-wrapper">
+                                            <a href="story.html">
+                                                <h5>October 12, 2020</h5>
+                                            </a>
+                                            <div class="byline">
+                                                <span class="category">State floats tender for solar powered street lights</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <a href="story.html"><img src="content/002.jpg" alt=""></a>
+                                            </div>
+                                            <div class="col-sm-7 headline-wrapper">
+                                                <a href="story.html">
+                                                    <h5>October 10, 2020</h5>
+                                                </a>
+                                                <div class="byline">
+                                                    <span class="category">Procurement board orders for fresh ballot papers tender</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <a href="story.html"><img src="content/003.jpg" alt=""></a>
+                                            </div>
+                                            <div class="col-sm-7 headline-wrapper">
+                                                <a href="story.html">
+                                                    <h5>October 08, 2020</h5>
+                                                </a>
+                                                <div class="byline">
+                                                    <span class="category">End to revenue stalemate in sight as team is formed to discuss deal</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <a href="story.html"><img src="content/004.jpg" alt=""></a>
+                                            </div>
+                                            <div class="col-sm-7 headline-wrapper">
+                                                <a href="story.html">
+                                                    <h5>October 03, 2020</h5>
+                                                </a>
+                                                <div class="byline">
+                                                    <span class="category">Lawyer wants Uhuru by-passed in appointment of 41 judges</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </tal:main-macro>
+</metal:main>
+
 </body>
 </html>

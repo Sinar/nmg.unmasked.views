@@ -5,9 +5,81 @@
       i18n:domain="nmg.unmasked.views"
       metal:use-macro="context/main_template/macros/master">
 <body>
-  <metal:block fill-slot="content-core">
-      <h2 i18n:translate="">Sample View</h2>
-      <p tal:content="view/msg">this gets replaced</p>
-  </metal:block>
+<metal:main fill-slot="main">
+	<tal:main-macro metal:define-macro="main">
+        
+        <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+
+        <div class="section lead-image">
+            <div class="container">
+               <img tal:condition="context/image" tal:attributes="src string: ${context/absolute_url}/@@images/image/large" />
+            </div>
+        </div>
+        <div class="section issue-title">
+            <div class="container">
+                <main id="main-container" class="row row-offcanvas row-offcanvas-right">
+                    <div id="content-core" class="col-sm-12">
+                        <div class="container">
+                            <div class="row page-title-row txt-center">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-6">
+                                    <h1 tal:content="context/title">Covid-19 Millionnaires</h1>
+                                    <p class="excerpt" tal:content="context/description">
+                                        Kenyans have been unusually angry — and almost united — since the exposure documentary #COVID19Millionaires by NTV about the corruption in coronavirus-related tenders, and the theft of personal protective equipment (PPE) donated by philanthropists.
+                                    </p>
+                                    <div class="byline">
+                                        <!-- last modified date -->
+                                        <span class="date"><small>LAST UPDATED:</small><span tal:content="context/modified">Thursday, September 03, 2020</span></span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <div class="section ctrld-grid">
+            <div class="container">
+                <main id="main-container" class="row row-offcanvas row-offcanvas-right">
+                    <div id="content-core" class="col-sm-12">
+                        <div class="container">
+                            <div class="row-header">
+                                <h5 class="section-label">
+                                    Disclosure Timeline
+                                </h5>
+                            </div>
+                            <div class="row grid Ml">
+								<!-- repeat stories -->
+                                <div class="col-sm-4" tal:repeat="story view/stories">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <a tal:attributes="href story/absolute_url" href="story.html">
+												<img tal:condition="story/image" tal:attributes="src string: ${story/absolute_url}/@@images/image/thumb" src="content/002.jpg" alt="">
+												</a>
+                                            </div>
+                                            <div class="col-sm-7 headline-wrapper">
+                                                <a tal:attributes="href story/absolute_url" href="story.html">
+                                                    <h5 tal:content="story/effective">September 02, 2020</h5>
+                                                </a>
+                                                <div class="byline">
+                                                    <span class="category" tal:content="story/title">Procurement board orders for fresh ballot papers tender</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+						        <!-- end repeat stories -->
+                        </div>
+                    </div>
+                </div>
+        </div>
+        
+
+    </tal:main-macro>
+</metal:main>
+
 </body>
 </html>
