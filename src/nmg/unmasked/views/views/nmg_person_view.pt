@@ -30,7 +30,7 @@
                                      </div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <h2 tal:content="context/title">ALBERT KIGERA KARUME</h2>
+                                    <h1 tal:content="context/title">ALBERT KIGERA KARUME</h1>
                                     <p
                                     tal:content="context/description" class="excerpt">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
                                     <div class="byline">
