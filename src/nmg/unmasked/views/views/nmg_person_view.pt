@@ -19,29 +19,29 @@
                             <div class="row">
                                 <div class="col-sm-2"></div>
                                 <div class="col-sm-2">
-                                    <img tal:condition="context/image"
-                                    >
-                                    <img tal:condition="context/image" tal:attributes="src string: ${context/absolute_url}/@@images/image/thumb"
-                                    class="img-thumbnail">
-                                    <img
-                                     tal:condition="not: context/image"
-                                     tal:attributes="src
-                                     string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/user-light.svg"
-                                     alt="">
+                                    <div class="img-circle">
+                                        <img tal:condition="context/image"
+                                        >
+                                        <img tal:condition="context/image" tal:attributes="src string: ${context/absolute_url}/@@images/image/thumb"
+                                        class="img-thumbnail">
+                                        <img
+                                        tal:condition="not: context/image"
+                                        tal:attributes="src
+                                        string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/user-light.svg"
+                                        alt="">
+                                     </div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <a href="#">
-                                        <h2 tal:content="context/title">ALBERT KIGERA KARUME</h2>
-                                        <p
-                                        tal:content="context/description" class="excerpt">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
-                                        <div class="byline">
-                                            <span
-                                                class="category"><small>GENDER:</small><span
-                                                tal:replace="structure
-                                                view/w/gender/render">Male</span></span> &nbsp;&nbsp;
-                                            <span class="category"><small>AGE:</small> 45</span>
-                                        </div>
-                                    </a>
+                                    <h2 tal:content="context/title">ALBERT KIGERA KARUME</h2>
+                                    <p
+                                    tal:content="context/description" class="excerpt">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
+                                    <div class="byline">
+                                        <span
+                                            class="category"><small>GENDER:</small><span
+                                            tal:replace="structure
+                                            view/w/gender/render">Male</span></span> &nbsp;&nbsp;
+                                        <span class="category"><small>AGE:</small> 45</span>
+                                    </div>
                                 </div>
                                 <div class="col-sm-2"></div>
                             </div>
@@ -53,241 +53,251 @@
         <div class="section">
             <main class="row">
                 <div id="content-container" class="container">
-                        <div class="row">
-                            <div class="row Sr Sr-small">
-                                <div class="col-sm-5">
-                                    <div class="row-header">
-                                        <h5 class="section-label">
-                                            Family Relationships
-                                        </h5>
-                                    </div>
-                                    <div class="container">
+                    <div class="row">
+                        <div class="row Sr Sr-small">
+                            <div class="col-sm-5">
+                                <div class="row-header">
+                                    <h5 class="section-label">
+                                        Family Relationships
+                                    </h5>
+                                </div>
+                                <div class="container">
 
-                                        <!-- Spouse Subject -->
-                                        <div class="row" tal:repeat="relationship view/relationships_subject">
-                                            <div class="col-sm-10" tal:condition="python: relationship.relationship_type == 'spouse'">
-                                                <a tal:attributes="href relationship/relationship_object/to_object/absolute_url" href="person.html">
-                                                    <h3 tal:content="relationship/relationship_object/to_object/title">JAMES RAYMOND NJENGA</h3>
-                                                    <p tal:content="relationship/title" class="excerpt">Natus error sit voluptatem accusantium doloremque laudantium</p>
-                                                </a>
-                                            </div>
-                                            <div class="col-sm-2" tal:condition="python: relationship.relationship_type == 'spouse'">
-                                                <a tal:attributes="href relationship/relationship_object/to_object/absolute_url" href="person.html">
-                                                   
+                                    <!-- Spouse Subject -->
+                                    <div class="row" tal:repeat="relationship view/relationships_subject">
+                                        <div class="col-sm-10" tal:condition="python: relationship.relationship_type == 'spouse'">
+                                            <a tal:attributes="href relationship/relationship_object/to_object/absolute_url" href="person.html">
+                                                <h3 tal:content="relationship/relationship_object/to_object/title">JAMES RAYMOND NJENGA</h3>
+                                                <p tal:content="relationship/title" class="excerpt">Natus error sit voluptatem accusantium doloremque laudantium</p>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-2" tal:condition="python: relationship.relationship_type == 'spouse'">
+                                            <a tal:attributes="href relationship/relationship_object/to_object/absolute_url" href="person.html">
+                                                <div class="img-circle">
                                                     <img
-                                                       tal:condition="relationship/relationship_object/to_object/image" 
+                                                    tal:condition="relationship/relationship_object/to_object/image" 
                                                         tal:attributes="src string:
                                                         ${relationship/relationship_object/to_object/absolute_url}/@@images/image/thumb">
 
                                                     <img
-                                                     tal:condition="not: relationship/relationship_object/to_object/image"
-                                                     tal:attributes="src
-                                                     string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/user-light.svg"
-                                                    src="img/user-light.svg" alt=""></a>
-                                            </div>
-                                        </div>
-                                        <!-- end Spouse Subject -->
-
-                                        <!-- Spouse Object -->
-                                        <div class="row" tal:repeat="relationship view/relationships_object">
-                                            <div class="col-sm-10" tal:condition="python: relationship.relationship_type == 'spouse'">
-                                                <a tal:attributes="href relationship/relationship_subject/to_object/absolute_url" href="person.html">
-                                                    <h3 tal:content="relationship/relationship_subject/to_object/title">JAMES RAYMOND NJENGA</h3>
-                                                    <p>Spouse of <span tal:replace="relationship/relationship_subject/to_object/title" /></p>
+                                                    tal:condition="not: relationship/relationship_object/to_object/image"
+                                                    tal:attributes="src
+                                                    string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/user-light.svg"
+                                                    src="img/user-light.svg" alt="">
+                                                </div>
                                                 </a>
-                                            </div>
-                                            <div class="col-sm-2" tal:condition="python: relationship.relationship_type == 'spouse'">
-                                                <a tal:attributes="href relationship/relationship_object/to_object/absolute_url" href="person.html">
-                                                   
+                                        </div>
+                                    </div>
+                                    <!-- end Spouse Subject -->
+
+                                    <!-- Spouse Object -->
+                                    <div class="row" tal:repeat="relationship view/relationships_object">
+                                        <div class="col-sm-10" tal:condition="python: relationship.relationship_type == 'spouse'">
+                                            <a tal:attributes="href relationship/relationship_subject/to_object/absolute_url" href="person.html">
+                                                <h3 tal:content="relationship/relationship_subject/to_object/title">JAMES RAYMOND NJENGA</h3>
+                                                <p>Spouse of <span tal:replace="relationship/relationship_subject/to_object/title" /></p>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-2" tal:condition="python: relationship.relationship_type == 'spouse'">
+                                            <a tal:attributes="href relationship/relationship_object/to_object/absolute_url" href="person.html">
+                                                <div class="img-circle">
                                                     <img
                                                         tal:condition="relationship/relationship_subject/to_object/image" 
                                                         tal:attributes="src string:
                                                         ${relationship/relationship_subject/to_object/absolute_url}/@@images/image/thumb">
 
                                                     <img
-                                                     tal:condition="not: relationship/relationship_subject/to_object/image"
-                                                     tal:attributes="src
-                                                     string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/user-light.svg"
-                                                    src="img/user-light.svg" alt=""></a>
-                                            </div>
+                                                    tal:condition="not: relationship/relationship_subject/to_object/image"
+                                                    tal:attributes="src
+                                                    string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/user-light.svg"
+                                                    src="img/user-light.svg" alt="">
+                                                </div>
+                                            </a>
                                         </div>
-                                        <!-- end Spouse Subject -->
+                                    </div>
+                                    <!-- end Spouse Subject -->
 
 
-                                        <!-- Parent Subject -->
-                                        <div class="row" tal:repeat="relationship view/relationships_subject">
-                                            <div class="col-sm-10" tal:condition="python: relationship.relationship_type == 'parent'">
-                                                <a tal:attributes="href relationship/relationship_object/to_object/absolute_url" href="person.html">
-                                                    <h3 tal:content="relationship/relationship_object/to_object/title">JAMES RAYMOND NJENGA</h3>
-                                                    <p tal:content="relationship/title" class="excerpt">Natus error sit voluptatem accusantium doloremque laudantium</p>
-                                                </a>
-                                            </div>
-                                            <div class="col-sm-2" tal:condition="python: relationship.relationship_type == 'parent'">
-                                                <a tal:attributes="href relationship/relationship_object/to_object/absolute_url" href="person.html">
-                                                   
+                                    <!-- Parent Subject -->
+                                    <div class="row" tal:repeat="relationship view/relationships_subject">
+                                        <div class="col-sm-10" tal:condition="python: relationship.relationship_type == 'parent'">
+                                            <a tal:attributes="href relationship/relationship_object/to_object/absolute_url" href="person.html">
+                                                <h3 tal:content="relationship/relationship_object/to_object/title">JAMES RAYMOND NJENGA</h3>
+                                                <p tal:content="relationship/title" class="excerpt">Natus error sit voluptatem accusantium doloremque laudantium</p>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-2" tal:condition="python: relationship.relationship_type == 'parent'">
+                                            <a tal:attributes="href relationship/relationship_object/to_object/absolute_url" href="person.html">
+                                                <div class="img-circle">
                                                     <img
-                                                       tal:condition="relationship/relationship_object/to_object/image" 
+                                                    tal:condition="relationship/relationship_object/to_object/image" 
                                                         tal:attributes="src string:
                                                         ${relationship/relationship_object/to_object/absolute_url}/@@images/image/thumb">
 
                                                     <img
-                                                     tal:condition="not: relationship/relationship_object/to_object/image"
-                                                     tal:attributes="src
-                                                     string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/user-light.svg"
-                                                    src="img/user-light.svg" alt=""></a>
-                                            </div>
+                                                    tal:condition="not: relationship/relationship_object/to_object/image"
+                                                    tal:attributes="src
+                                                    string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/user-light.svg"
+                                                    src="img/user-light.svg" alt="">
+                                                </div>
+                                            </a>
                                         </div>
-                                        <!-- end Parent -->
+                                    </div>
+                                    <!-- end Parent -->
 
-                                        <!-- Child Of -->
-                                        <div class="row" tal:repeat="relationship view/relationships_object">
-                                            <div class="col-sm-10" tal:condition="python: relationship.relationship_type == 'parent'">
-                                                <a tal:attributes="href relationship/relationship_subject/to_object/absolute_url" href="person.html">
-                                                    <h3 tal:content="relationship/relationship_subject/to_object/title">JAMES RAYMOND NJENGA</h3>
-                                                    <p>Child of <span tal:replace="relationship/relationship_subject/to_object/title" /></p>
+                                    <!-- Child Of -->
+                                    <div class="row" tal:repeat="relationship view/relationships_object">
+                                        <div class="col-sm-10" tal:condition="python: relationship.relationship_type == 'parent'">
+                                            <a tal:attributes="href relationship/relationship_subject/to_object/absolute_url" href="person.html">
+                                                <h3 tal:content="relationship/relationship_subject/to_object/title">JAMES RAYMOND NJENGA</h3>
+                                                <p>Child of <span tal:replace="relationship/relationship_subject/to_object/title" /></p>
 
-                                                </a>
-                                            </div>
-                                            <div class="col-sm-2" tal:condition="python: relationship.relationship_type == 'parent'">
-                                                <a tal:attributes="href relationship/relationship_object/to_object/absolute_url" href="person.html">
-                                                   
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-2" tal:condition="python: relationship.relationship_type == 'parent'">
+                                            <a tal:attributes="href relationship/relationship_object/to_object/absolute_url" href="person.html">
+                                                <div class="img-circle">
                                                     <img
-                                                       tal:condition="relationship/relationship_subject/to_object/image" 
+                                                    tal:condition="relationship/relationship_subject/to_object/image" 
                                                         tal:attributes="src string:
                                                         ${relationship/relationship_subject/to_object/absolute_url}/@@images/image/thumb">
 
                                                     <img
-                                                     tal:condition="not: relationship/relationship_subject/to_object/image"
-                                                     tal:attributes="src
-                                                     string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/user-light.svg"
-                                                    src="img/user-light.svg" alt=""></a>
-                                            </div>
+                                                    tal:condition="not: relationship/relationship_subject/to_object/image"
+                                                    tal:attributes="src
+                                                    string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/user-light.svg"
+                                                    src="img/user-light.svg" alt="">
+                                                </div>    
+                                            </a>
                                         </div>
-                                        <!-- end Child Of -->
+                                    </div>
+                                    <!-- end Child Of -->
 
 
-                                        <!-- Cousin Subject -->
-                                        <div class="row" tal:repeat="relationship view/relationships_subject">
-                                            <div class="col-sm-10" tal:condition="python: relationship.relationship_type == 'cousin'">
-                                                <a tal:attributes="href relationship/relationship_object/to_object/absolute_url" href="person.html">
-                                                    <h3 tal:content="relationship/relationship_object/to_object/title">JAMES RAYMOND NJENGA</h3>
-                                                    <p class="excerpt">Cousin of <span tal:replace="relationship/relationship_object/to_object/title" /></p>
-                                                </a>
-                                            </div>
-                                            <div class="col-sm-2" tal:condition="python: relationship.relationship_type == 'cousin'">
-                                                <a tal:attributes="href relationship/relationship_object/to_object/absolute_url" href="person.html">
-                                                   
+                                    <!-- Cousin Subject -->
+                                    <div class="row" tal:repeat="relationship view/relationships_subject">
+                                        <div class="col-sm-10" tal:condition="python: relationship.relationship_type == 'cousin'">
+                                            <a tal:attributes="href relationship/relationship_object/to_object/absolute_url" href="person.html">
+                                                <h3 tal:content="relationship/relationship_object/to_object/title">JAMES RAYMOND NJENGA</h3>
+                                                <p class="excerpt">Cousin of <span tal:replace="relationship/relationship_object/to_object/title" /></p>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-2" tal:condition="python: relationship.relationship_type == 'cousin'">
+                                            <a tal:attributes="href relationship/relationship_object/to_object/absolute_url" href="person.html">
+                                                <div class="img-circle">
                                                     <img
-                                                       tal:condition="relationship/relationship_object/to_object/image" 
+                                                    tal:condition="relationship/relationship_object/to_object/image" 
                                                         tal:attributes="src string:
                                                         ${relationship/relationship_object/to_object/absolute_url}/@@images/image/thumb">
 
                                                     <img
-                                                     tal:condition="not: relationship/relationship_object/to_object/image"
-                                                     tal:attributes="src
-                                                     string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/user-light.svg"
-                                                    src="img/user-light.svg" alt=""></a>
-                                            </div>
+                                                    tal:condition="not: relationship/relationship_object/to_object/image"
+                                                    tal:attributes="src
+                                                    string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/user-light.svg"
+                                                    src="img/user-light.svg" alt="">
+                                                </div>
+                                            </a>
                                         </div>
-                                        <!-- end Cousin -->
+                                    </div>
+                                    <!-- end Cousin -->
 
-                                        <!-- Cousin Object -->
-                                        <div class="row" tal:repeat="relationship view/relationships_object">
-                                            <div class="col-sm-10" tal:condition="python: relationship.relationship_type == 'cousin'">
-                                                <a tal:attributes="href relationship/relationship_subject/to_object/absolute_url" href="person.html">
-                                                    <h3 tal:content="relationship/relationship_subject/to_object/title">JAMES RAYMOND NJENGA</h3>
-                                                    <p class="excerpt">Cousin of <span tal:replace="relationship/relationship_subject/to_object/title" /></p>
-                                                </a>
-                                            </div>
-                                            <div class="col-sm-2" tal:condition="python: relationship.relationship_type == 'cousin'">
-                                                <a tal:attributes="href relationship/relationship_object/to_object/absolute_url" href="person.html">
-                                                   
+                                    <!-- Cousin Object -->
+                                    <div class="row" tal:repeat="relationship view/relationships_object">
+                                        <div class="col-sm-10" tal:condition="python: relationship.relationship_type == 'cousin'">
+                                            <a tal:attributes="href relationship/relationship_subject/to_object/absolute_url" href="person.html">
+                                                <h3 tal:content="relationship/relationship_subject/to_object/title">JAMES RAYMOND NJENGA</h3>
+                                                <p class="excerpt">Cousin of <span tal:replace="relationship/relationship_subject/to_object/title" /></p>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-2" tal:condition="python: relationship.relationship_type == 'cousin'">
+                                            <a tal:attributes="href relationship/relationship_object/to_object/absolute_url" href="person.html">
+                                                <div class="img-circle">
                                                     <img
-                                                       tal:condition="relationship/relationship_subject/to_object/image" 
+                                                    tal:condition="relationship/relationship_subject/to_object/image" 
                                                         tal:attributes="src string:
                                                         ${relationship/relationship_subject/to_object/absolute_url}/@@images/image/thumb">
 
                                                     <img
-                                                     tal:condition="not: relationship/relationship_subject/to_object/image"
-                                                     tal:attributes="src
-                                                     string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/user-light.svg"
-                                                    src="img/user-light.svg" alt=""></a>
-                                            </div>
+                                                    tal:condition="not: relationship/relationship_subject/to_object/image"
+                                                    tal:attributes="src
+                                                    string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/user-light.svg"
+                                                    src="img/user-light.svg" alt="">
+                                                </div>
+                                            </a>
                                         </div>
-                                        <!-- end Cousin -->
-
-
-                                     </div>
+                                    </div>
+                                    <!-- end Cousin -->
 
                                 </div>
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-5">
-                                    <div class="row-header">
-                                        <h5 class="section-label">
-                                            Business Relationships
-                                        </h5>
-                                    </div>
-                                    <div class="container">
+                            </div>
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-5">
+                                <div class="row-header">
+                                    <h5 class="section-label">
+                                        Business Relationships
+                                    </h5>
+                                </div>
+                                <div class="container">
 
-                                        <!-- Business Associate Subject -->
-                                        <div class="row" tal:repeat="relationship view/relationships_subject">
-                                            <div class="col-sm-10" tal:condition="python: relationship.relationship_type == 'associate'">
-                                                <a tal:attributes="href relationship/relationship_object/to_object/absolute_url" href="person.html">
-                                                    <h3 tal:content="relationship/relationship_object/to_object/title">JAMES RAYMOND NJENGA</h3>
-                                                    <p tal:content="relationship/title" class="excerpt">Natus error sit voluptatem accusantium doloremque laudantium</p>
-                                                </a>
-                                            </div>
-                                            <div class="col-sm-2" tal:condition="python: relationship.relationship_type == 'associate'">
-                                                <a tal:attributes="href relationship/relationship_object/to_object/absolute_url" href="person.html">
-                                                   
+                                    <!-- Business Associate Subject -->
+                                    <div class="row" tal:repeat="relationship view/relationships_subject">
+                                        <div class="col-sm-10" tal:condition="python: relationship.relationship_type == 'associate'">
+                                            <a tal:attributes="href relationship/relationship_object/to_object/absolute_url" href="person.html">
+                                                <h3 tal:content="relationship/relationship_object/to_object/title">JAMES RAYMOND NJENGA</h3>
+                                                <p tal:content="relationship/title" class="excerpt">Natus error sit voluptatem accusantium doloremque laudantium</p>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-2" tal:condition="python: relationship.relationship_type == 'associate'">
+                                            <a tal:attributes="href relationship/relationship_object/to_object/absolute_url" href="person.html">
+                                                <div class="img-circle">
                                                     <img
-                                                       tal:condition="relationship/relationship_object/to_object/image" 
+                                                        tal:condition="relationship/relationship_object/to_object/image" 
                                                         tal:attributes="src string:
                                                         ${relationship/relationship_object/to_object/absolute_url}/@@images/image/thumb">
 
                                                     <img
-                                                     tal:condition="not: relationship/relationship_object/to_object/image"
-                                                     tal:attributes="src
-                                                     string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/user-light.svg"
-                                                    src="img/user-light.svg" alt=""></a>
-                                            </div>
+                                                        tal:condition="not: relationship/relationship_object/to_object/image"
+                                                        tal:attributes="src
+                                                        string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/user-light.svg"
+                                                    src="img/user-light.svg" alt="">
+                                                </div>    
+                                            </a>
                                         </div>
-                                        <!-- end Business Associate -->
+                                    </div>
+                                    <!-- end Business Associate -->
 
-                                        <!-- Business Associate Object -->
-                                        <div class="row" tal:repeat="relationship view/relationships_object">
-                                            <div class="col-sm-10" tal:condition="python: relationship.relationship_type == 'associate'">
-                                                <a tal:attributes="href relationship/relationship_subject/to_object/absolute_url" href="person.html">
-                                                    <h3 tal:content="relationship/relationship_subject/to_object/title">JAMES RAYMOND NJENGA</h3>
-                                                    <p tal:content="relationship/title" class="excerpt">Natus error sit voluptatem accusantium doloremque laudantium</p>
-                                                </a>
-                                            </div>
-                                            <div class="col-sm-2" tal:condition="python: relationship.relationship_type == 'associate'">
-                                                <a tal:attributes="href relationship/relationship_subject/to_object/absolute_url" href="person.html">
-                                                   
+                                    <!-- Business Associate Object -->
+                                    <div class="row" tal:repeat="relationship view/relationships_object">
+                                        <div class="col-sm-10" tal:condition="python: relationship.relationship_type == 'associate'">
+                                            <a tal:attributes="href relationship/relationship_subject/to_object/absolute_url" href="person.html">
+                                                <h3 tal:content="relationship/relationship_subject/to_object/title">JAMES RAYMOND NJENGA</h3>
+                                                <p tal:content="relationship/title" class="excerpt">Natus error sit voluptatem accusantium doloremque laudantium</p>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-2" tal:condition="python: relationship.relationship_type == 'associate'">
+                                            <a tal:attributes="href relationship/relationship_subject/to_object/absolute_url" href="person.html">
+                                                <div class="img-circle">
                                                     <img
-                                                       tal:condition="relationship/relationship_subject/to_object/image" 
+                                                        tal:condition="relationship/relationship_subject/to_object/image" 
                                                         tal:attributes="src string:
                                                         ${relationship/relationship_subject/to_object/absolute_url}/@@images/image/thumb">
 
                                                     <img
-                                                     tal:condition="not: relationship/relationship_subject/to_object/image"
-                                                     tal:attributes="src
-                                                     string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/user-light.svg"
-                                                    src="img/user-light.svg" alt=""></a>
-                                            </div>
+                                                        tal:condition="not: relationship/relationship_subject/to_object/image"
+                                                        tal:attributes="src
+                                                        string:${context/@@plone_portal_state/portal_url}/++theme++nmg-unmasked/++theme++nmg-unmasked/img/user-light.svg"
+                                                    src="img/user-light.svg" alt="">
+                                                </div>
+                                            </a>
                                         </div>
-                                        <!-- end Business Associate -->
-
-
-
-
                                     </div>
-                                    
+                                    <!-- end Business Associate -->
+
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
             </main>
         </div>
         <div class="section">
@@ -351,104 +361,103 @@
                 </div>
             </main>
         </div>
-
-			<div class="section">
-				<main class="row row-offcanvas row-offcanvas-right">
-					<div class="container">
-						<div class="row">
-							<div class="row Sr Sr-small">
-								<div class="col-sm-5">
-									<div class="row-header">
-										<h5 class="section-label">
-											Related Stories
-										</h5>
-										<a href="#" class="section-link">All Related Stories</a>
-									</div>
-									<div class="container">
-										<div class="row" tal:repeat="story view/stories">
-											<div class="col-sm-8">
-												<a tal:attributes="href story/absolute_url"
-													href="#">
-													<h3 tal:content="story/title">Lawyer wants Uhuru by-passed in appointment of 41 judges</h3>
-													<p tal:content="story/description" class="excerpt">A widower and a divorcee share the struggles and triumphs of raising their children alone.</p>
-													<div class="byline">
-														<span class="category">Story</span>
-														<span tal:content="python:context.toLocalizedTime(story.effective_date)" class="date">4 hours ago</span>
-													</div>
-												</a>
-											</div>
-											<div class="col-sm-4">
-												<a tal:attributes="href story/absolute_url" href="">
-												<img tal:condition="story/image | nothing" 
-													tal:attributes="src string:${story/absolute_url}/@@images/image/thumb"
-												 src="content/002.jpg" alt=""></a>
-											</div>
-										</div>
-								   </div>
-									
-								</div>
-								<div class="col-sm-1"></div>
-								<div class="col-sm-5">
-									<div class="row-header">
-										<h5 class="section-label">
-											Contracts
-										</h5>
-									</div>
-									<div class="container">
-										<div class="row">
-											<div class="col-sm-10">
-												<a href="person.html">
-													<h3>Contract NO. EACC/07/2014-2015 FOR
-														SUPPLY AND DELIVERY OF VARIOUS ICT
-														ITEMS</h3>
-													<p class="excerpt">Contract security None
-														Cost of hard copy bid
-														document Kes 500</p>
-												</a>
-											</div>
-											<div class="col-sm-2">
-												<a href="person.html"><img src="content/tender.jpg" alt=""></a>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-sm-10">
-												<a href="person.html">
-													<h3>Contract NO. EACC/06/2014-2015 FOR
-														SUPPLY AND DELIVERY OF MOBILE
-														REPORT OFFICE BUS AND FABRICATION
-														OF AN EXISTING LORRY</h3>
-													<p class="excerpt">Contract security 2% of bid
-														price
-														Cost of hard copy bid
-														document Kes 1000</p>
-												</a>
-											</div>
-											<div class="col-sm-2">
-												<a href="person.html"><img src="content/tender.jpg" alt=""></a>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-sm-10">
-												<a href="person.html">
-													<h3>Contract NO. EACC/04/2014-2015 FOR
-														PROVISION OF OUTSIDE CATERING SERVICES FOR A PERIOD OF ONE YEAR</h3>
-													<p class="excerpt">Contract security Kes 200,000
-														Cost of hard copy bid
-														document Kes 1000</p>
-												</a>
-											</div>
-											<div class="col-sm-2">
-												<a href="person.html"><img src="" alt=""></a>
-											</div>
-										</div>
-									</div>
-									
-								</div>
-							</div>
-						</div>
-					</div>
-				</main>
-			</div>
+        <div class="section">
+            <main class="row row-offcanvas row-offcanvas-right">
+                <div class="container">
+                    <div class="row">
+                        <div class="row Sr Sr-small">
+                            <div class="col-sm-5">
+                                <div class="row-header">
+                                    <h5 class="section-label">
+                                        Related Stories
+                                    </h5>
+                                    <a href="#" class="section-link">All Related Stories</a>
+                                </div>
+                                <div class="container">
+                                    <div class="row" tal:repeat="story view/stories">
+                                        <div class="col-sm-8">
+                                            <a tal:attributes="href story/absolute_url"
+                                                href="#">
+                                                <h3 tal:content="story/title">Lawyer wants Uhuru by-passed in appointment of 41 judges</h3>
+                                                <p tal:content="story/description" class="excerpt">A widower and a divorcee share the struggles and triumphs of raising their children alone.</p>
+                                                <div class="byline">
+                                                    <span class="category">Story</span>
+                                                    <span tal:content="python:context.toLocalizedTime(story.effective_date)" class="date">4 hours ago</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <a tal:attributes="href story/absolute_url" href="">
+                                            <img tal:condition="story/image | nothing" 
+                                                tal:attributes="src string:${story/absolute_url}/@@images/image/thumb"
+                                                src="content/002.jpg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-5">
+                                <div class="row-header">
+                                    <h5 class="section-label">
+                                        Contracts
+                                    </h5>
+                                </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-10">
+                                            <a href="person.html">
+                                                <h3>Contract NO. EACC/07/2014-2015 FOR
+                                                    SUPPLY AND DELIVERY OF VARIOUS ICT
+                                                    ITEMS</h3>
+                                                <p class="excerpt">Contract security None
+                                                    Cost of hard copy bid
+                                                    document Kes 500</p>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <a href="person.html"><img src="content/tender.jpg" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-10">
+                                            <a href="person.html">
+                                                <h3>Contract NO. EACC/06/2014-2015 FOR
+                                                    SUPPLY AND DELIVERY OF MOBILE
+                                                    REPORT OFFICE BUS AND FABRICATION
+                                                    OF AN EXISTING LORRY</h3>
+                                                <p class="excerpt">Contract security 2% of bid
+                                                    price
+                                                    Cost of hard copy bid
+                                                    document Kes 1000</p>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <a href="person.html"><img src="content/tender.jpg" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-10">
+                                            <a href="person.html">
+                                                <h3>Contract NO. EACC/04/2014-2015 FOR
+                                                    PROVISION OF OUTSIDE CATERING SERVICES FOR A PERIOD OF ONE YEAR</h3>
+                                                <p class="excerpt">Contract security Kes 200,000
+                                                    Cost of hard copy bid
+                                                    document Kes 1000</p>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <a href="person.html"><img src="" alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
 
         </tal:main-macro>
     </metal:main>
