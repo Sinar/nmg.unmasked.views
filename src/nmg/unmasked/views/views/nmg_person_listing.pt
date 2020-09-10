@@ -56,16 +56,17 @@
 					<p class="excerpt"
                        tal:content="brain/Description">DIRECTOR: PELICAN INSURANCE BROKERS (K) LIMITED</p>
 					<div class="byline">
-						<span class="category">Diector</span>
+                        <!-- hidden until we figure how to use it
+						<span class="category">Director</span>
 						<span class="date">P.O BOX 52801 CITY SQUARE</span>
+                        -->
 					</div>
 				</a>
 			</div>
 			<div class="col-sm-4">
 				<a tal:define="obj brain/getObject"
 				   tal:attributes="href brain/getURL" href="#">
-                      <img tal:condition="obj/image" tal:attributes="src string: ${obj/absolute_url}/@@images/image/thumb" />
-				</div>
+                      <img tal:on-error="string: none" tal:condition="obj/image" tal:attributes="src string: ${obj/absolute_url}/@@images/image/thumb" />
 				</a>
 			</div>
 		</div>
