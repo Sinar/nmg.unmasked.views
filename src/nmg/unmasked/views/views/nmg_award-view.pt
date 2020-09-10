@@ -29,7 +29,7 @@
                                             </span>
                                         </span><br/>
                                         <span class="category"><small>AWARDED BY:</small>
-                                            <a tal:attributes="href context/procuringEntity/to_object/absolute_url"><span tal:content="context/procuringEntity/to_object/title">School Equipment Production Unit (SEPU)</span></a>
+                                            <a tal:attributes="href context/procuringEntity/to_object/absolute_url" tal:on-error="nothing"><span tal:content="context/procuringEntity/to_object/title" tal:on-error="nothing">School Equipment Production Unit (SEPU)</span></a>
                                         </span><br/>
                                         <span class="category"><small>CONTRACT VALUE:</small> KSh <span tal:replace="context/award_amount">150,000,000</span></span> 
                                     </div>
