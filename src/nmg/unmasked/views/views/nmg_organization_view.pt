@@ -184,7 +184,7 @@
                                 <a href="#" class="section-link">All Related Procurement</a>
                             </div>
                             <div class="container">
-                                <div class="row" tal:repeat="award view/awards">
+                                <div class="row" tal:repeat="award view/awards" tal:on-error="string: nothing">
                                     <div class="col-sm-10">
                                         <a tal:attributes="href award/absolute_url" href="person.html">
                                             <h3 tal:content="award/title">Contract NO. EACC/07/2014-2015 FOR
