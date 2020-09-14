@@ -10,6 +10,8 @@ from zope.security import checkPermission
 from zc.relation.interfaces import ICatalog
 from zope.schema.interfaces import IVocabularyFactory
 
+from datetime import date
+
 # from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 
@@ -177,3 +179,10 @@ class NMGPersonView(DefaultView):
         unique = list(dict.fromkeys(result))
 
         return unique
+
+    def calc_age(self, birthdate):
+        today = date.today()
+        age = today.year - birthdate.year - \
+            ((today.month, today.day) < (birthdate.month, birthdate.day))
+
+        return age

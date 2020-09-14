@@ -16,8 +16,9 @@
                         <div class="row">
                             <div class="col-sm-3"></div>
                             <div class="col-sm-6 headline">
-                            <h5 class="section-label"><a tal:on-error="nothing" tal:attributes="href
-                                    context/issue/to_object/absolute_url" href="issue.html">Covid-19 Millionnaires</a></h5>
+                            <h5 class="section-label">
+                                <a tal:on-error="nothing" tal:attributes="href context/issue/to_object/absolute_url" href="issue.html" 
+                                                         tal:content="context/issue/to_object/title">Covid-19 Millionnaires</a></h5>
                                 <h1 class="title-normal" tal:content="context/title">Covid-19: Head teachers say released cash too little for reopening plans</h1>
                                 <div class="byline">
                                     <span class="date"
@@ -100,7 +101,7 @@
                                                 <a tal:attributes="href story/absolute_url" href="story.html"><img tal:condition="story/image" tal:attributes="src string: ${story/absolute_url}/@@images/image/thumb" src="content/002.jpg" alt=""></a>
                                             </div>
                                             <div class="col-sm-7 headline-wrapper">
-                                                <a href="story.html">
+                                                <a href="story.html" tal:attributes="href story/absolute_url">
                                                     <h5
                                                         tal:content="python:
                                                         context.toLocalizedTime(story.effective())">September 02, 2020</h5>

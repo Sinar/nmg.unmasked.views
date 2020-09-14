@@ -39,7 +39,7 @@
                                                 class="category"><small>GENDER:</small><span
                                                 tal:replace="structure
                                                 view/w/gender/render">Male</span></span> &nbsp;&nbsp;
-                                            <span class="category"><small>AGE:</small> 45</span>
+                                        <span class="category"><small>AGE:</small><span tal:on-error="nothing" tal:content="python:view.calc_age(context.birth_date)">45</span></span>
                                         </div>
                                     </div>
                                     <div class="col-sm-2"></div>

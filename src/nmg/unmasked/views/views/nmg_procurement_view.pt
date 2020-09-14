@@ -30,7 +30,7 @@
                                     <p tal:content="context/description" class="excerpt">Procurement for PPE Supplies for Nairobi Hospital - 200 masks. Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
                                     <div class="byline">
                                         <span
-                                        tal:content="context/effective" class="date">Friday, 26 April, 2020</span>
+                                        tal:content="python: context.toLocalizedTime(context.effective())" class="date">Friday, 26 April, 2020</span>
                                     </div>
                                 </div>
                                 <div class="col-sm-2"></div>
